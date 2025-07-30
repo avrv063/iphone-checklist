@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Чек-лист iPhone</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f9;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .checklist {
+      max-width: 500px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .item {
+      display: flex;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+    }
+    .item:last-child {
+      border-bottom: none;
+    }
+    .item input[type="checkbox"] {
+      margin-right: 10px;
+      transform: scale(1.4);
+    }
+    .complete-message {
+      display: none;
+      margin-top: 20px;
+      text-align: center;
+      font-weight: bold;
+      color: green;
+      font-size: 1.2em;
+    }
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      background: #4CAF50;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>Чек-лист iPhone</h1>
+  <div class="checklist">
+    <div class="item"><input type="checkbox" /> IMEI по *#06#</div>
+    <div class="item"><input type="checkbox" /> Проверка Face ID / Touch ID</div>
+    <div class="item"><input type="checkbox" /> Экран — битые пиксели</div>
+    <div class="item"><input type="checkbox" /> Камеры работают</div>
+    <div class="item"><input type="checkbox" /> Зарядка и порт</div>
+    <div class="item"><input type="checkbox" /> Динамики и микрофон</div>
+    <div class="item"><input type="checkbox" /> Wi-Fi, Bluetooth, Сеть</div>
+    <div class="item"><input type="checkbox" /> iCloud выключен</div>
+    <div class="item"><input type="checkbox" /> Состояние корпуса и экрана</div>
+    <div class="item"><input type="checkbox" /> Прочее (аксессуары, комплект)</div>
+    <div class="complete-message" id="completeMessage">✅ Айфон полностью проверен!</div>
+    <button onclick="resetChecklist()">Сбросить чек-лист</button>
+  </div>
+
+  <script>
+    const checkboxes = document.querySelectorAll('.checklist input[type="checkbox"]');
+    const completeMessage = document.getElementById('completeMessage');
+
+    checkboxes.forEach(cb => {
+      cb.addEventListener('change', () => {
+        const allChecked = [...checkboxes].every(box => box.checked);
+        completeMessage.style.display = allChecked ? 'block' : 'none';
+      });
+    });
+
+    function resetChecklist() {
+      checkboxes.forEach(cb => cb.checked = false);
+      completeMessage.style.display = 'none';
+    }
+  </script>
+</body>
+</html>

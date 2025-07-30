@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 pyTelegramBotAPI
+=======
+pyTelegramBotAPI
+>>>>>>> c6e7418b54b6d99e1337c3f0529169a215354019
