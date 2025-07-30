@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import telebot
 from telebot.types import ReplyKeyboardMarkup, KeyboardButton, WebAppInfo
 
@@ -15,7 +14,6 @@ def start(message):
     bot.send_message(message.chat.id, "Привет! Нажми кнопку для запуска чек-листа:", reply_markup=markup)
 
 bot.infinity_polling()
-=======
 import telebot
 from telebot.types import ReplyKeyboardMarkup, KeyboardButton, WebAppInfo
 
@@ -32,5 +30,3 @@ def start(message):
     bot.send_message(message.chat.id, "Привет! Нажми кнопку для запуска чек-листа:", reply_markup=markup)
 
 bot.infinity_polling()
->>>>>>> c6e7418b54b6d99e1337c3f0529169a215354019
- 
